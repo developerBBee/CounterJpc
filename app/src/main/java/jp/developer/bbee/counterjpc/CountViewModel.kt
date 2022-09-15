@@ -1,6 +1,7 @@
 package jp.developer.bbee.counterjpc
 
 import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 
@@ -12,7 +13,8 @@ class CountViewModel : ViewModel() {
     /**
      * holding number of count
      */
-    val count: MutableState<Int> = mutableStateOf(0)
+    private val _count: MutableState<Int> = mutableStateOf(0)
+    val count: State<Int> = _count
 
     /**
      * This function called on button tap counts up the number
@@ -21,6 +23,6 @@ class CountViewModel : ViewModel() {
      */
     fun onCountUpTapped() {
         val currentValue = requireNotNull(count.value)
-        count.value = currentValue + 1
+        _count.value = currentValue + 1
     }
 }
