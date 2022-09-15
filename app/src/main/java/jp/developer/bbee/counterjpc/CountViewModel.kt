@@ -2,11 +2,12 @@ package jp.developer.bbee.counterjpc
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
+import androidx.lifecycle.ViewModel
 
 /**
  * CountViewModel is holding count state
  */
-class CountViewModel {
+class CountViewModel : ViewModel() {
 
     /**
      * holding number of count
